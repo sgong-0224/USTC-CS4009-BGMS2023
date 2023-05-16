@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>桌游管理系统</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        nav {
+            font-size: 1.5rem;
+            background-color: #21D4FD;
+            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        }
+        h1 {
+            font-size: 2rem;
+            color: white;
+        }
+        li {
+            margin: 10px 20px;
+        }
+        th {
+            width: 100px;
+        }
+        label {
+            margin: auto;
+            padding-right: 20px;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+        <li>
+            <h1><a th:href="@{/}" style="color: white; text-decoration: none">桌游管理系统</a></h1>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/admin/Board/getAll}">桌游管理</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/admin/Player/getAll}">用户管理</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/admin/record/getAll}">借还管理</a>
+        </li>
+    </ul>
+    <div class="text-white" style="font-size: medium; position: absolute; bottom: 30px; right: 40px">
+        <div class="dropdown">
+            <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+               th:text="${session.name}+', 您好'">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" th:href="@{/user/toInfoPage}" sec:authorize="hasRole('USER')">个人信息</a>
+                <a class="dropdown-item" th:href="@{/toChPwdPage}">修改密码</a>
+                <a class="dropdown-item" th:href="@{/logout}">注销</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <form th:action="@{/admin/Board/add}" method="post">
+        <div class="input-group">
+            <label for="name">桌游名称</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="input-group">
+            <label for="Category">类别</label>
+            <input type="text" class="form-control" id="Category" name="Category">
+        </div>
+        <div class="input-group">
+            <label for="PlayerCount">PlayerCount</label>
+            <input type="text" class="form-control" id="PlayerCount" name="PlayerCount">
+        </div>
+        <div class="input-group">
+            <label for="Introduction">简介</label>
+            <textarea type="text" class="form-control" id="Introduction" name="Introduction"></textarea>
+        </div>
+        <div class="input-group">
+            <label for="StoreLocation">存储位置</label>
+            <input type="text" class="form-control" id="StoreLocation" name="StoreLocation">
+        </div>
+        <div class="input-group">
+            <label for="state">状态</label>
+            <input type="text" class="form-control" id="state" name="state">
+        </div>
+        <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">
+        <a th:href="@{/admin/Board/getAll}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
+    </form>
+</div>
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

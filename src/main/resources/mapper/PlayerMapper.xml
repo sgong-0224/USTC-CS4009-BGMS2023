@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.utbm.Boardmanager.mapper.PlayerMapper">
+    <select id="getAllPlayer" resultType="Player">
+        select * from Player_info
+    </select>
+
+    <select id="getPlayerName" resultType="String">
+        select name from Player_info where Player_id = #{PlayerId}
+    </select>
+
+    <select id="getPlayerInfo" resultType="Player">
+        select * from Player_info where Player_id = #{PlayerId}
+    </select>
+
+    <update id="updateInfo" parameterType="Player">
+        update Player_info set name = #{name}, sex = #{sex}, telcode = #{telcode}
+        where Player_id = #{PlayerId}
+    </update>
+</mapper>
