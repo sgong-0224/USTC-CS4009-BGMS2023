@@ -45,15 +45,15 @@ CREATE TABLE `lend_list`  (
   `sernum` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '流水号',
   `Board_id` bigint(20) NOT NULL COMMENT '桌游编号',
   `Player_id` int(11) NOT NULL COMMENT '玩家ID',
-  `lend_date` date NULL DEFAULT NULL COMMENT '借出日期',
-  `back_date` date NULL DEFAULT NULL COMMENT '归还日期',
+  `lend_date` datetime NULL DEFAULT NULL COMMENT '借出时间',
+  `back_date` datetime NULL DEFAULT NULL COMMENT '归还时间',
   PRIMARY KEY (`sernum`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2023051601 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of lend_list
 -- ----------------------------
-INSERT INTO `lend_list` VALUES (1958060801, 0, 0, '1958-06-08','1958-09-20');
+INSERT INTO `lend_list` VALUES (1970010101, 0, 0, '1970-01-01 21:55:00','1970-01-01 23:30:00');
 -- ----------------------------
 -- Table structure for Player_info
 -- ----------------------------
