@@ -75,6 +75,7 @@
             <th>类别</th>
             <th>游玩人数</th>
             <th>简介</th>
+            <th>状态</th>
             <th></th>
             <th></th>
             <th></th>
@@ -86,6 +87,7 @@
             <td th:text="${Board.getCategory()}"></td>
             <td th:text="${Board.getPlayerCount()}"></td>
             <td th:text="${Board.getIntroduction()}"></td>
+            <td th:text="${Board.getState()}"></td>
             <td><a th:href="@{'/admin/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">详情</a></td>
             <td><a th:href="@{'/admin/Board/toEditPage/' + ${Board.getBoardId()}}" class="btn btn-outline-info">编辑</a></td>
             <td><a th:href="@{'/admin/Board/delete/' + ${Board.getBoardId()}}" class="btn btn-outline-danger">删除</a></td>

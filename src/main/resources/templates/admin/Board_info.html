@@ -82,10 +82,7 @@
         </tr>
         <tr>
             <th>状态</th>
-            <div th:switch="${Board.getState()}">
-                <td th:case="1">可用</td>
-                <td th:case="0">不可用</td>
-            </div>
+            <td th:text="${Board.getState()}"></td>
         </tr>
     </table>
     <a th:href="@{/admin/Board/getAll}" class="btn btn-outline-primary btn-lg">返&nbsp;&nbsp;&nbsp;&nbsp;回</a>
