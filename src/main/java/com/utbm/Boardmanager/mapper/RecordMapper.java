@@ -11,4 +11,5 @@ import java.util.List;
 public interface RecordMapper {
     List<Record> getAllRecord();
     List<Record> getOwnRecord(String PlayerId);
+
 }

@@ -10,4 +10,5 @@
     <select id="getOwnRecord" resultType="Record">
         select * from lend_list where Player_id = #{PlayerId}
     </select>
+
 </mapper>

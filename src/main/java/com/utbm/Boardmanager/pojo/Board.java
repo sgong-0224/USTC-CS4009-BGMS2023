@@ -14,5 +14,5 @@ public class Board {
     private String PlayerCount;
     private String Introduction;
     private String StoreLocation;
-    private String state;
+    private String State;
 }

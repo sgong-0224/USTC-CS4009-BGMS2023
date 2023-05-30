@@ -23,4 +23,5 @@ public class UserRecordController {
         model.addAttribute("records", records);
         return "user/ownRecord";
     }
+
 }

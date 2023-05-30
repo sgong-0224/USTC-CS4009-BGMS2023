@@ -72,10 +72,12 @@
     <table class="table table-hover" style="margin-top: 20px">
         <thead>
         <tr>
+            <th>桌游编号</th>
             <th>桌游名称</th>
             <th>类别</th>
             <th>游玩人数</th>
             <th>简介</th>
+            <th>存储位置</th>
             <th>状态</th>
             <th></th>
             <th></th>
@@ -84,10 +86,12 @@
         </thead>
         <tbody>
         <tr th:each="Board, BoardStat: ${Boards}">
+            <td th:text="${Board.getBoardId()}"></td>
             <td th:text="${Board.getName()}"></td>
             <td th:text="${Board.getCategory()}"></td>
             <td th:text="${Board.getPlayerCount()}"></td>
             <td th:text="${Board.getIntroduction()}"></td>
+            <td th:text="${Board.getStoreLocation()}"></td>
             <td th:text="${Board.getState()}"></td>
             <td><a th:href="@{'/admin/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">详情</a></td>
             <td><a th:href="@{'/admin/Board/toEditPage/' + ${Board.getBoardId()}}" class="btn btn-outline-info">编辑</a></td>

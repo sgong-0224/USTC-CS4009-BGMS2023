@@ -24,7 +24,7 @@
 
     <insert id="addBoard" parameterType="Board">
         insert into Board_info values (null, #{name}, #{Category}, #{PlayerCount}, #{Introduction},
-                                      #{StoreLocation}, #{state})
+                                      #{StoreLocation}, #{State})
     </insert>
 
     <select id="searchBoard" resultType="Board">
