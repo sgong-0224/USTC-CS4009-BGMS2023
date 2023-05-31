@@ -91,7 +91,10 @@
             <td th:text="${Board.getPlayerCount()}"></td>
             <td th:text="${Board.getIntroduction()}"></td>
             <td th:text="${Board.getStoreLocation()}"></td>
-            <td th:text="${Board.getState()}"></td>
+            <div th:switch="${Board.getState()}">
+                <td th:case="1">可用</td>
+                <td th:case="0">已借出</td>
+            </div>
             <td><a th:href="@{'/admin/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">详情</a></td>
             <td><a th:href="@{'/admin/Board/toEditPage/' + ${Board.getBoardId()}}" class="btn btn-outline-info">编辑</a></td>
             <td><a th:href="@{'/admin/Board/delete/' + ${Board.getBoardId()}}" class="btn btn-outline-danger">删除</a></td>
