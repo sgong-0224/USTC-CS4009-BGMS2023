@@ -68,16 +68,19 @@
     <table class="table table-hover" style="margin-top: 20px">
         <thead>
         <tr>
+            <th>桌游编号</th>
             <th>桌游名称</th>
             <th>类别</th>
             <th>游玩人数</th>
             <th>简介</th>
             <th>状态</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="Board, BoardStat: ${Boards}">
+            <td th:text="${Board.getBoardId()}"></td>
             <td th:text="${Board.getName()}"></td>
             <td th:text="${Board.getCategory()}"></td>
             <td th:text="${Board.getPlayerCount()}"></td>
@@ -87,6 +90,9 @@
                 <td th:case="0">已借出</td>
             </div>
             <td><a th:href="@{'/user/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">详情</a></td>
+            <div th:switch="${Board.getState()}">
+                <td th:case="1"><a th:href="@{/user/record/toAddPage}" class="btn btn-outline-success">借用</a></td>
+            </div>
         </tr>
         </tbody>
     </table>

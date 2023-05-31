@@ -14,7 +14,7 @@ public class Record {
     private long BoardId;
     private int PlayerId;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-    private Date lendDate;
+    private String lendDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-    private Date backDate;
+    private String backDate;
 }

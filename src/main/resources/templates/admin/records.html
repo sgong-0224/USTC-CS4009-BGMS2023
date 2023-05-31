@@ -68,6 +68,7 @@
             <th>玩家ID</th>
             <th>借出时间</th>
             <th>归还时间</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -75,8 +76,9 @@
             <td th:text="${record.getSernum()}"></td>
             <td th:text="${record.getBoardId()}"></td>
             <td th:text="${record.getPlayerId()}"></td>
-            <td th:text="${#dates.format(record.getLendDate(),'yyyy-MM-dd HH:mm')}"></td>
-            <td th:text="${#dates.format(record.getBackDate(),'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${record.getLendDate()}"></td>
+            <td th:text="${record.getBackDate()}"></td>
+            <td><a th:href="@{'/admin/record/delete/' + ${record.getSernum()}}" class="btn btn-outline-danger">删除</a></td>
         </tr>
         </tbody>
     </table>

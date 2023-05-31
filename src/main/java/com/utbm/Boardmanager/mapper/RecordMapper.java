@@ -11,5 +11,7 @@ import java.util.List;
 public interface RecordMapper {
     List<Record> getAllRecord();
     List<Record> getOwnRecord(String PlayerId);
-
+    long addRecord(Record Record);
+    void delRecord(long sernum);
+    Record getRecordbySernum(long sernum);
 }

@@ -11,4 +11,18 @@
         select * from lend_list where Player_id = #{PlayerId}
     </select>
 
+    <select id="getRecordbySernum" resultType="Record">
+        select * from lend_list where sernum = #{sernum}
+    </select>
+
+    <insert id="addRecord" parameterType="Record">
+        insert into lend_list values (null, #{BoardId}, #{PlayerId}, #{lendDate}, #{backDate})
+        <selectKey keyProperty="sernum" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <delete id="delRecord" parameterType="Record">
+        delete from lend_list where sernum=#{sernum}
+    </delete>
 </mapper>

@@ -18,6 +18,18 @@
         where Board_id = #{BoardId}
     </update>
 
+    <update id="SetBorrowed" parameterType="Board">
+        update Board_info
+        set state = 0
+        where Board_id = #{BoardId}
+    </update>
+
+    <update id="SetReturned" parameterType="Board">
+        update Board_info
+        set state = 1
+        where Board_id = #{BoardId}
+    </update>
+
     <delete id="deleteBoard">
         delete from Board_info where Board_id = #{id}
     </delete>

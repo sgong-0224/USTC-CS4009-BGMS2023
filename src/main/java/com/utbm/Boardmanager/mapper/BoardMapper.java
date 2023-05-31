@@ -15,4 +15,6 @@ public interface BoardMapper {
     void deleteBoard(long id);
     void addBoard(Board Board);
     List<Board> searchBoard(String keyword);
+    void SetBorrowed(Board Board);
+    void SetReturned(Board Board);
 }

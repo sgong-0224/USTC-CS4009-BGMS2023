@@ -28,14 +28,14 @@ CREATE TABLE `Board_info`  (
   `PlayerCount` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '游玩人数',
   `Introduction` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '简介',
   `StoreLocation` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '存储位置',
-  `State` varchar(3) NULL DEFAULT NULL COMMENT '状态',
+  `State` smallint(3) NULL DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`Board_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of Board_info
 -- ----------------------------
-INSERT INTO `Board_info` VALUES (0, '示例桌游', '某个类别', '1-1958', '玩法示例', '存储位置', '可用');
+INSERT INTO `Board_info` VALUES (0, '示例桌游', '某个类别', '1-1958', '玩法示例', '存储位置', 1);
 
 -- ----------------------------
 -- Table structure for lend_list
@@ -45,15 +45,15 @@ CREATE TABLE `lend_list`  (
   `sernum` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '流水号',
   `Board_id` bigint(20) NOT NULL COMMENT '桌游编号',
   `Player_id` int(11) NOT NULL COMMENT '玩家ID',
-  `lend_date` datetime NULL DEFAULT NULL COMMENT '借出时间',
-  `back_date` datetime NULL DEFAULT NULL COMMENT '归还时间',
+  `lend_date` varchar(23) NULL DEFAULT NULL COMMENT '借出时间',
+  `back_date` varchar(23) NULL DEFAULT NULL COMMENT '归还时间',
   PRIMARY KEY (`sernum`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of lend_list
 -- ----------------------------
-INSERT INTO `lend_list` VALUES (0, 0, 0, '1970-01-01 21:55:00','1970-01-01 23:30:00');
+INSERT INTO `lend_list` VALUES (0, 0, 0, '1970-01-01T21:55:00','1970-01-01T23:30:00');
 -- ----------------------------
 -- Table structure for Player_info
 -- ----------------------------
