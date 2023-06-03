@@ -53,7 +53,7 @@ CREATE TABLE `lend_list`  (
 -- ----------------------------
 -- Records of lend_list
 -- ----------------------------
-INSERT INTO `lend_list` VALUES (0, 0, 0, '1970-01-01T21:55:00','1970-01-01T23:30:00');
+INSERT INTO `lend_list` VALUES (0, 1, 0, '1970-01-01T21:55','1970-01-01T23:30');
 -- ----------------------------
 -- Table structure for Player_info
 -- ----------------------------

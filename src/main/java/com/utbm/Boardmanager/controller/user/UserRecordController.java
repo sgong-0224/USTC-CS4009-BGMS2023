@@ -17,6 +17,7 @@ import java.util.List;
 public class UserRecordController {
     @Autowired
     private RecordMapper recordMapper;
+    @Autowired
     private BoardMapper boardMapper;
 
     @RequestMapping("/getOwnRecord")
@@ -34,11 +35,20 @@ public class UserRecordController {
     @RequestMapping("/add")
     public String add(Record Record,HttpSession session,Model model) {
         long sernum=recordMapper.addRecord(Record);
-        //Record tempRecord=recordMapper.getRecordbySernum(sernum);
-        //boardMapper.SetBorrowed(boardMapper.getBoardById(String.valueOf(tempRecord.getBoardId())));//null?
+        long serial1=Record.getSernum();
+        Record tempRecord=recordMapper.getRecordbySernum(serial1);
+        String bid=String.valueOf(tempRecord.getBoardId());
+        boardMapper.SetBorrowed(boardMapper.getBoardById(bid));
+        //debug:
+        //System.out.println(""+serial1);
+        //System.out.println(""+tempRecord.getBoardId());
+        //System.out.println(""+bid);
+        //debug end
         String username = (String) session.getAttribute("username");
         List<Record> records = recordMapper.getOwnRecord(username);
         model.addAttribute("records", records);
         return "user/ownRecord";
     }
+
+
 }

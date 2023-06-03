@@ -17,8 +17,8 @@
 
     <insert id="addRecord" parameterType="Record">
         insert into lend_list values (null, #{BoardId}, #{PlayerId}, #{lendDate}, #{backDate})
-        <selectKey keyProperty="sernum" order="AFTER" resultType="java.lang.Long">
-            SELECT LAST_INSERT_ID()
+        <selectKey keyProperty="sernum" order="AFTER" resultType="long">
+            select LAST_INSERT_ID()
         </selectKey>
     </insert>
 
