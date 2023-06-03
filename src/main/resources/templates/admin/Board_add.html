@@ -67,30 +67,37 @@
 
 <div class="container">
     <form th:action="@{/admin/Board/add}" method="post">
+        <br>
         <div class="input-group">
             <label for="name">桌游名称</label>
             <input type="text" class="form-control" id="name" name="name">
         </div>
+        <br>
         <div class="input-group">
             <label for="Category">类别</label>
             <input type="text" class="form-control" id="Category" name="Category">
         </div>
+        <br>
         <div class="input-group">
             <label for="PlayerCount">游玩人数</label>
             <input type="text" class="form-control" id="PlayerCount" name="PlayerCount">
         </div>
+        <br>
         <div class="input-group">
             <label for="Introduction">简介</label>
             <textarea type="text" class="form-control" id="Introduction" name="Introduction"></textarea>
         </div>
+        <br>
         <div class="input-group">
             <label for="StoreLocation">存储位置</label>
             <input type="text" class="form-control" id="StoreLocation" name="StoreLocation">
         </div>
+        <br>
         <div class="input-group">
             <label for="State">状态(1为可用，0为已借出)</label>
             <input type="text" class="form-control" id="State" name="State">
         </div>
+        <br>
         <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">
         <a th:href="@{/admin/Board/getAll}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
     </form>

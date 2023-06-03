@@ -89,22 +89,27 @@
 
 <div class="container">
   <form th:action="@{/user/record/add}" method="post">
+    <br>
     <div class="input-group">
       <label for="BoardId">桌游编号</label>
       <input type="text" class="form-control" id="BoardId" name="BoardId">
     </div>
+    <br>
     <div class="input-group">
       <label for="PlayerId">玩家ID</label>
       <input type="text" class="form-control" id="PlayerId" name="PlayerId">
     </div>
+    <br>
     <div class="input-group">
       <label for="lendDate">借出时间</label>
       <input type="text" readonly="readonly" class="form-control" id="lendDate" name="lendDate">
     </div>
+    <br>
     <div class="input-group">
       <label for="backDate">预计归还时间</label>
       <input type="datetime-local" class="form-control" id="backDate" name="backDate">
     </div>
+    <br>
     <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">
     <a th:href="@{/user/record/getOwnRecord}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
   </form>

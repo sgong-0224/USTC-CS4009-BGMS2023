@@ -68,7 +68,8 @@
             <th>玩家ID</th>
             <th>借出时间</th>
             <th>归还时间</th>
-            <th></th>
+            <th>状态</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -78,6 +79,10 @@
             <td th:text="${record.getPlayerId()}"></td>
             <td th:text="${record.getLendDate()}"></td>
             <td th:text="${record.getBackDate()}"></td>
+            <div th:switch="${record.getState()}">
+                <td th:case="0">未归还</td>
+                <td th:case="1">已归还</td>
+            </div>
             <td><a th:href="@{'/admin/record/delete/' + ${record.getSernum()}}" class="btn btn-outline-danger">删除</a></td>
         </tr>
         </tbody>

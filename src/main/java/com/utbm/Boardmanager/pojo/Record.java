@@ -17,4 +17,5 @@ public class Record {
     private String lendDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private String backDate;
+    private int State;
 }

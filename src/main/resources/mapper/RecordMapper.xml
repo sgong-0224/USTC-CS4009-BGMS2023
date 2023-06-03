@@ -16,7 +16,7 @@
     </select>
 
     <insert id="addRecord" parameterType="Record">
-        insert into lend_list values (null, #{BoardId}, #{PlayerId}, #{lendDate}, #{backDate})
+        insert into lend_list values (null, #{BoardId}, #{PlayerId}, #{lendDate}, #{backDate},0)
         <selectKey keyProperty="sernum" order="AFTER" resultType="long">
             select LAST_INSERT_ID()
         </selectKey>
@@ -25,4 +25,10 @@
     <delete id="delRecord" parameterType="Record">
         delete from lend_list where sernum=#{sernum}
     </delete>
+
+    <update id="updateRecord" parameterType="Record">
+        update lend_list
+        set back_date=#{backDate},State=#{State}
+        where sernum = #{sernum}
+    </update>
 </mapper>

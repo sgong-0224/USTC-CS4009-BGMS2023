@@ -57,26 +57,32 @@
 
 <div class="container">
     <table class="table">
+        <br>
         <tr>
             <th>桌游名称</th>
             <td th:text="${Board.getName()}"></td>
         </tr>
+        <br>
         <tr>
             <th>类别</th>
             <td th:text="${Board.getCategory()}"></td>
         </tr>
+        <br>
         <tr>
             <th>游玩人数</th>
             <td th:text="${Board.getPlayerCount()}"></td>
         </tr>
+        <br>
         <tr>
             <th>简介</th>
             <td th:text="${Board.getIntroduction()}"></td>
         </tr>
+        <br>
         <tr>
             <th>存储位置</th>
             <td th:text="${Board.getStoreLocation()}"></td>
         </tr>
+        <br>
         <tr>
             <th>状态</th>
             <div th:switch="${Board.getState()}">
@@ -85,6 +91,7 @@
             </div>
         </tr>
     </table>
+    <br>
     <a th:href="@{/user/Board/getAll}" class="btn btn-outline-primary btn-lg">返&nbsp;&nbsp;&nbsp;&nbsp;回</a>
 </div>
 

@@ -47,13 +47,14 @@ CREATE TABLE `lend_list`  (
   `Player_id` int(11) NOT NULL COMMENT '玩家ID',
   `lend_date` varchar(23) NULL DEFAULT NULL COMMENT '借出时间',
   `back_date` varchar(23) NULL DEFAULT NULL COMMENT '归还时间',
+  `State` smallint(3) NULL DEFAULT NULL COMMENT '是否归还-1是0否',
   PRIMARY KEY (`sernum`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of lend_list
 -- ----------------------------
-INSERT INTO `lend_list` VALUES (0, 1, 0, '1970-01-01T21:55','1970-01-01T23:30');
+INSERT INTO `lend_list` VALUES (0, 1, 0, '1970-01-01T21:55','1970-01-01T23:30',1);
 -- ----------------------------
 -- Table structure for Player_info
 -- ----------------------------

@@ -1,5 +1,6 @@
 package com.utbm.Boardmanager.mapper;
 
+import com.utbm.Boardmanager.pojo.Board;
 import com.utbm.Boardmanager.pojo.Record;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -14,4 +15,6 @@ public interface RecordMapper {
     long addRecord(Record Record);
     void delRecord(long sernum);
     Record getRecordbySernum(long sernum);
+    void ReturnRecord(Record Record);
+    void updateRecord(Record Record);
 }

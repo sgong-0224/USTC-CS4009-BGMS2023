@@ -23,19 +23,44 @@
         li {
             margin: 10px 20px;
         }
-        th {
-            width: 100px;
-        }
-        label {
-            margin: auto;
-            padding-right: 20px;
-        }
-        .input-group {
-            margin-bottom: 10px;
+        #searchBox {
+            width: 300px;
+            float: right;
         }
     </style>
 </head>
-<body>
+<script>
+	    function timenow(){
+		  var d = new Date();
+		  var a = d.getFullYear() + "-";
+		  if (d.getMonth() + 1 >= 10 ){
+			  var c = (d.getMonth() + 1) + "-";
+		  }
+		  else{
+			  var c = "0" + (d.getMonth() + 1) + '-';
+		  }
+		  if (d.getDate() >= 10 ){
+		  	  var n = d.getDate();
+		  }
+		  else{
+		  	  var n = "0" + d.getDate();
+		  }
+		  if (d.getHours() >= 10 ){
+		  	  var h = "T" + d.getHours()+':';
+		  }
+		  else{
+		  	  var h = "T"+"0" + d.getHours()+':';
+		  }
+          if (d.getMinutes() >= 10 ){
+		  	  var m = d.getMinutes();
+		  }
+		  else{
+		  	  var m = "0" + d.getMinutes();
+		  }
+		  document.getElementById("backDate").value = a + c + n + h + m;
+	    }
+</script>
+<body onload="timenow()">
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <ul class="navbar-nav">
         <li>
@@ -45,7 +70,7 @@
             <a class="nav-link" th:href="@{/user/Board/getAll}">桌游信息</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/user/record/getOwnRecord}">借用记录</a>
+            <a class="nav-link active" th:href="@{/user/record/getOwnRecord}">借用记录</a>
         </li>
     </ul>
     <div class="text-white" style="font-size: medium; position: absolute; bottom: 30px; right: 40px">
@@ -63,33 +88,24 @@
 </nav>
 
 <div class="container">
-    <form th:action="@{/user/info/update}" method="post" style="margin-top: 40px">
+    <form th:action="@{/user/record/return}" method="post">
+        <tr th:each="record, recordStat: ${Record}">
+        <input type="text" hidden name="State" th:value="1">
+        <input type="text" hidden name="sernum" th:value="${Record.getSernum()}">
+        <input type="text" hidden name="BoardId" th:value="${Record.getBoardId()}">
         <br>
         <div class="input-group">
-            <label for="PlayerId">玩家ID</label>
-            <input type="text" class="form-control" id="PlayerId" name="PlayerId" th:value="${info.getPlayerId()}" readonly>
+            <label for="backDate">归还时间</label>
+            <input type="text" readonly="readonly" class="form-control" id="backDate" name="backDate">
         </div>
         <br>
-        <div class="input-group">
-            <label for="name">姓名</label>
-            <input type="text" class="form-control" id="name" name="name" th:value="${info.getName()}">
-        </div>
+        <input type="submit" value="确认归还" class="btn btn-outline-primary btn-lg">
+        <a th:href="@{/user/record/getOwnRecord}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
         <br>
-        <div class="input-group">
-            <label for="sex">性别</label>
-            <input type="text" class="form-control" id="sex" name="sex" th:value="${info.getSex()}">
-        </div>
-        <br>
-        <div class="input-group">
-            <label for="telcode">电话</label>
-            <input type="text" class="form-control" id="telcode" name="telcode" th:value="${info.getTelcode()}">
-        </div>
-        <br>
-        <input type="submit" value="修    改" class="btn btn-outline-primary btn-lg" style="margin-top: 20px">
-        <a th:href="@{/}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px; margin-top: 20px">返&nbsp;&nbsp;&nbsp;&nbsp;回</a>
+        </tr>
     </form>
-
 </div>
+
 
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>

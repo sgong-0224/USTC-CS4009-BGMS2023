@@ -7,6 +7,7 @@ import com.utbm.Boardmanager.pojo.Record;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -50,5 +51,44 @@ public class UserRecordController {
         return "user/ownRecord";
     }
 
+    @RequestMapping("/toReturnPage/{sernum}")
+    public String toReturnPage(Model model, @PathVariable("sernum") long sernum) {
+        Record Record = recordMapper.getRecordbySernum(sernum);
+        //debug
+        //System.out.println(""+Record.getBoardId());
+        //System.out.println(""+Record.getSernum());
+        //System.out.println(""+Record.getPlayerId());
+        //debug end
+        model.addAttribute("Record", Record);
+        return "user/Record_return";
+    }
+    @RequestMapping("/return")
+    public String ReturnRecord(Record Record,HttpSession session,Model model) {
+        String bid=String.valueOf(Record.getBoardId());
+        recordMapper.updateRecord(Record);
+        Board rBoard=boardMapper.getBoardById(bid);
+        //debug
+        //System.out.println(""+rBoard.getState());
+        //debug end
+        boardMapper.SetReturned(rBoard);
+        String username = (String) session.getAttribute("username");
+        List<Record> records = recordMapper.getOwnRecord(username);
+        model.addAttribute("records", records);
+        return "user/ownRecord";
+    }
 
+    @RequestMapping("/toExtendPage/{sernum}")
+    public String toExtendPage(Model model, @PathVariable("sernum") long sernum) {
+        Record Record = recordMapper.getRecordbySernum(sernum);
+        model.addAttribute("Record", Record);
+        return "user/Record_extend";
+    }
+    @RequestMapping("/extend")
+    public String ExtendRecord(Record Record,HttpSession session,Model model) {
+        recordMapper.updateRecord(Record);
+        String username = (String) session.getAttribute("username");
+        List<Record> records = recordMapper.getOwnRecord(username);
+        model.addAttribute("records", records);
+        return "user/ownRecord";
+    }
 }
