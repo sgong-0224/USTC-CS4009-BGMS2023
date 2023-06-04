@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.utbm</groupId>
     <artifactId>BoardGameManager</artifactId>
-    <version>0.7.1-Alpha</version>
+    <version>0.7.2-Alpha</version>
     <name>Boardmanager</name>
     <description>Demo project for Spring Boot</description>
 
