@@ -36,16 +36,13 @@
             <h1><a th:href="@{/}" style="color: white; text-decoration: none">桌游管理系统</a></h1>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/admin/Board/getAll}">桌游管理</a>
+            <a class="nav-link" th:href="@{/user/Board/getAll}">桌游信息</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" th:href="@{/admin/Player/getAll}">用户管理</a>
+            <a class="nav-link" th:href="@{/user/record/getOwnRecord}">借用记录</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" th:href="@{/admin/record/getAll}">借还管理</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" th:href="@{/admin/Notification/getAll}">通知管理</a>
+            <a class="nav-link active" th:href="@{/user/Notification/getOwnNotification}">我的提醒</a>
         </li>
     </ul>
     <div class="text-white" style="font-size: medium; position: absolute; bottom: 30px; right: 40px">
@@ -66,31 +63,18 @@
     <table class="table table-hover" style="margin-top: 20px">
         <thead>
         <tr>
-            <th>流水号</th>
-            <th>桌游编号</th>
+            <th>通知编号</th>
             <th>用户名</th>
-            <th>借出时间</th>
-            <th>归还时间</th>
-            <th>状态</th>
-            <th>操作</th>
-            <th></th>
+            <th>借用记录流水号</th>
+            <th>通知内容</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="record, recordStat: ${records}">
-            <td th:text="${record.getSernum()}"></td>
-            <td th:text="${record.getBoardId()}"></td>
-            <td th:text="${record.getPlayerId()}"></td>
-            <td th:text="${record.getLendDate()}"></td>
-            <td th:text="${record.getBackDate()}"></td>
-            <div th:switch="${record.getState()}">
-                <td th:case="0">未归还</td>
-                <td th:case="1">已归还</td>
-            </div>
-            <div th:switch="${record.getState()}">
-                <td th:case="0"><a th:href="@{'/admin/Notification/send/' + ${record.getSernum()}}" class="btn btn-outline-success">发送通知提醒</a></td>
-            </div>
-            <td><a th:href="@{'/admin/record/delete/' + ${record.getSernum()}}" class="btn btn-outline-danger">删除</a></td>
+        <tr th:each="Notification, NotificationStat: ${notifications}">
+            <td th:text="${Notification.getMessageId()}"></td>
+            <td th:text="${Notification.getPlayerId()}"></td>
+            <td th:text="${Notification.getSernum()}"></td>
+            <td th:text="${Notification.getContent()}"></td>
         </tr>
         </tbody>
     </table>

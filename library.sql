@@ -47,7 +47,7 @@ CREATE TABLE `lend_list`  (
   `Player_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
   `lend_date` varchar(23) NULL DEFAULT NULL COMMENT '借出时间',
   `back_date` varchar(23) NULL DEFAULT NULL COMMENT '归还时间',
-  `State` smallint(3) NULL DEFAULT NULL COMMENT '是否归还:1是0否',
+  `State` smallint(3) NULL DEFAULT NULL COMMENT '是否归还:1-是,0-否',
   PRIMARY KEY (`sernum`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -64,7 +64,7 @@ CREATE TABLE `Player_info`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '姓名',
   `telcode` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '电话',
   PRIMARY KEY (`Player_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of Player_info
@@ -86,5 +86,22 @@ CREATE TABLE `user`  (
 -- ----------------------------
 INSERT INTO `user` VALUES ('user', 'userpass', 'user');
 INSERT INTO `user` VALUES ('admin', 'useradmin', 'admin');
+
+-- ----------------------------
+-- Table structure for Notification
+-- ----------------------------
+DROP TABLE IF EXISTS `Notification`;
+CREATE TABLE `Notification`  (
+  `message_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '通知编号',
+  `Player_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
+  `sernum` bigint(20) NOT NULL COMMENT '借用记录流水号',
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '消息内容',
+  PRIMARY KEY (`message_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of Notification
+-- ----------------------------
+
 
 SET FOREIGN_KEY_CHECKS = 1;

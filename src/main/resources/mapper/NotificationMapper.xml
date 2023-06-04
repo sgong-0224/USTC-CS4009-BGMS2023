@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.utbm.Boardmanager.mapper.NotificationMapper">
+    <select id="getAllNotification" resultType="Notification">
+        select * from Notification
+    </select>
+
+    <select id="getOwnNotification" resultType="Notification">
+        select * from Notification where Player_id = #{PlayerId}
+    </select>
+
+    <insert id="SendNotification" parameterType="Record">
+        insert into Notification values (null, #{PlayerId},#{sernum},
+        CONCAT(#{PlayerId},",您好! 您的借用(流水号:",#{sernum},")于",#{backDate},"到期,请及时归还。"))
+    </insert>
+
+    <delete id="delNotification" parameterType="Notification">
+        delete from Notification where message_id=#{MessageId}
+    </delete>
+</mapper>
