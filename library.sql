@@ -84,7 +84,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('user', '123456', 'user');
-INSERT INTO `user` VALUES ('admin', '111111', 'admin');
+INSERT INTO `user` VALUES ('user', 'userpass', 'user');
+INSERT INTO `user` VALUES ('admin', 'useradmin', 'admin');
 
 SET FOREIGN_KEY_CHECKS = 1;

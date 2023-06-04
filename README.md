@@ -31,3 +31,7 @@ UI: Bootstrap
 3. 编译(以IntelliJ IDEA为例)：导入Maven项目后选择Maven-Boardmanager-Lifecycle-package，双击编译。
 
    终端切换至jar包所在目录，执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）即可运行。
+
+*****管理员账号：admin 密码：useradmin
+
+  自带用户账号：user 密码：userpass
