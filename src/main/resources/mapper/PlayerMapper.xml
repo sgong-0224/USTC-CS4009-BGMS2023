@@ -16,7 +16,15 @@
     </select>
 
     <update id="updateInfo" parameterType="Player">
-        update Player_info set name = #{name}, sex = #{sex}, telcode = #{telcode}
+        update Player_info set name = #{name}, telcode = #{telcode}
         where Player_id = #{PlayerId}
     </update>
+
+    <insert id="addPlayer" parameterType="Player">
+        insert into Player_info values (#{PlayerId},#{name},#{telcode})
+    </insert>
+
+    <delete id="delPlayer" parameterType="Player">
+        delete from Player_info where Player_id = #{PlayerId}
+    </delete>
 </mapper>

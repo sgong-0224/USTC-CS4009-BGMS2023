@@ -66,18 +66,13 @@
     <form th:action="@{/user/info/update}" method="post" style="margin-top: 40px">
         <br>
         <div class="input-group">
-            <label for="PlayerId">玩家ID</label>
+            <label for="PlayerId">用户名</label>
             <input type="text" class="form-control" id="PlayerId" name="PlayerId" th:value="${info.getPlayerId()}" readonly>
         </div>
         <br>
         <div class="input-group">
             <label for="name">姓名</label>
             <input type="text" class="form-control" id="name" name="name" th:value="${info.getName()}">
-        </div>
-        <br>
-        <div class="input-group">
-            <label for="sex">性别</label>
-            <input type="text" class="form-control" id="sex" name="sex" th:value="${info.getSex()}">
         </div>
         <br>
         <div class="input-group">

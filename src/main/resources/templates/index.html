@@ -2,7 +2,7 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:background="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>桌游管理系统</title>
@@ -28,7 +28,30 @@
         }
     </style>
 </head>
-<body>
+<script>
+	    function datenow(){
+		  var d = new Date();
+		  var a = d.getFullYear() + " ";
+		  if (d.getMonth() + 1 >= 10 ){
+			  var c = (d.getMonth() + 1);
+		  }
+		  else{
+			  var c = "0" + (d.getMonth() + 1) + ' ';
+		  }
+		  if (d.getDate() >= 10 ){
+		  	  var n = d.getDate()+ ' ';
+		  }
+		  else{
+		  	  var n = "0" + d.getDate()+ ' ';
+		  }
+		  var aday = new Array("日", "一", "二", "三", "四", "五", "六");
+          var week = new Date().getDay();
+          var daystr = "星期"+ aday[week];
+		  document.getElementById("DateNow").innerHTML = a +"年 "+ c +"月 "+ n +"日 "+daystr;
+		  setInterval(function() {datenow()},1000);
+	    }
+</script>
+<body onload="datenow()">
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
         <ul class="navbar-nav" sec:authorize="hasRole('ADMIN')">
             <li>
@@ -72,10 +95,20 @@
 
     <div class="card bg-light" style="margin: 150px 100px; width: 400px">
         <div class="card-header">
+            <h1>欢迎使用桌游管理系统</h1>
         </div>
         <div class="card-body">
             <p>
-            <h1>欢迎使用桌游管理系统</h1>
+                <div>
+                <label for="DateNow">您好！今天是</label>
+                <label id="DateNow" name="DateNow"></label>
+                </div>
+                <br>
+                <a sec:authorize="hasRole('USER')">
+                <div>您的用户名是：<a th:text="${session.name}"></a></div>
+                <br>
+                <div>借用桌游需要此信息(可复制到剪贴板)</div>
+                </a>
             </p>
         </div>
     </div>

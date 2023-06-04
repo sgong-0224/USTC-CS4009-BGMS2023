@@ -44,25 +44,24 @@ DROP TABLE IF EXISTS `lend_list`;
 CREATE TABLE `lend_list`  (
   `sernum` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '流水号',
   `Board_id` bigint(20) NOT NULL COMMENT '桌游编号',
-  `Player_id` int(11) NOT NULL COMMENT '玩家ID',
+  `Player_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
   `lend_date` varchar(23) NULL DEFAULT NULL COMMENT '借出时间',
   `back_date` varchar(23) NULL DEFAULT NULL COMMENT '归还时间',
-  `State` smallint(3) NULL DEFAULT NULL COMMENT '是否归还-1是0否',
+  `State` smallint(3) NULL DEFAULT NULL COMMENT '是否归还:1是0否',
   PRIMARY KEY (`sernum`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of lend_list
 -- ----------------------------
-INSERT INTO `lend_list` VALUES (0, 1, 0, '1970-01-01T21:55','1970-01-01T23:30',1);
+INSERT INTO `lend_list` VALUES (0, 1, 'user', '1970-01-01T21:55','1970-01-01T23:30',1);
 -- ----------------------------
 -- Table structure for Player_info
 -- ----------------------------
 DROP TABLE IF EXISTS `Player_info`;
 CREATE TABLE `Player_info`  (
-  `Player_id` int(11) NOT NULL COMMENT '玩家ID',
-  `name` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '姓名',
-  `sex` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '性别',
+  `Player_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '姓名',
   `telcode` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '电话',
   PRIMARY KEY (`Player_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -70,13 +69,13 @@ CREATE TABLE `Player_info`  (
 -- ----------------------------
 -- Records of Player_info
 -- ----------------------------
-INSERT INTO `Player_info` VALUES (0, '用户0','男','11122223333');
+INSERT INTO `Player_info` VALUES ('user', '用户0','11122223333');
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '账号',
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密码',
   `role` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限',
   PRIMARY KEY (`username`) USING BTREE

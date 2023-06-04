@@ -27,7 +27,7 @@ public class SessionFilter implements Filter {
             String username = ((UserDetails) principal).getUsername();
             String name = "管理员";
             if (!username.equals("admin")) {
-                name = PlayerMapper.getPlayerName(username);
+                name = username;
             }
 
             session.setAttribute("name", name);

@@ -14,4 +14,8 @@
     <select id="getPassword" resultType="String">
         select password from user where username = #{username}
     </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into user values (#{username},#{password},"user")
+    </insert>
 </mapper>

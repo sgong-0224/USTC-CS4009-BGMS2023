@@ -1,6 +1,7 @@
 package com.utbm.Boardmanager.mapper;
 
 import com.utbm.Boardmanager.pojo.Player;
+import com.utbm.Boardmanager.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +14,6 @@ public interface PlayerMapper {
     String getPlayerName(String PlayerId);
     Player getPlayerInfo(String PlayerId);
     void updateInfo(Player Player);
+    void addPlayer(Player Player);
+    void delPlayer(String PlayerId);
 }

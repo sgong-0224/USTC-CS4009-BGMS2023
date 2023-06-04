@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>桌游管理系统</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+        nav {
+            font-size: 1.5rem;
+            background-color: #21D4FD;
+            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        }
+        h1 {
+            font-size: 2rem;
+            color: white;
+        }
+        li {
+            margin: 10px 20px;
+        }
+        #searchBox {
+            width: 300px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li>
+      <h1><a th:href="@{/}" style="color: white; text-decoration: none">桌游管理系统</a></h1>
+    </li>
+  </ul>
+</nav>
+
+<form th:action="@{/register_Player}" method="post">
+  <br>
+  <div>
+    <label>请完善用户信息</label>
+  </div>
+  <br>
+  <tr th:each="user, userStat: ${User}">
+    <input type="text" hidden name="PlayerId" th:value="${User.getusername()}">
+  <div class="input-group">
+    <label for="name">姓名</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <br>
+  <div class="input-group">
+    <label for="telcode">电话</label>
+    <input type="text" class="form-control" id="telcode" name="telcode" maxlength="11">
+  </div>
+  <br>
+  <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">
+  <a th:href="@{/toLoginPage}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
+</form>
+
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

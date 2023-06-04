@@ -12,7 +12,7 @@ import java.util.Date;
 public class Record {
     private long sernum;
     private long BoardId;
-    private int PlayerId;
+    private String PlayerId;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private String lendDate;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")

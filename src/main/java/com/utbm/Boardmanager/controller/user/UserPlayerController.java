@@ -26,6 +26,6 @@ public class UserPlayerController {
     @RequestMapping("/info/update")
     public String update(Player Player) {
         PlayerMapper.updateInfo(Player);
-        return "redirect:/user/toInfoPage";
+        return "redirect:/index";
     }
 }
