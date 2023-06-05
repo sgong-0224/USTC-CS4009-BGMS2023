@@ -35,14 +35,14 @@ CREATE TABLE `Board_info`  (
 -- ----------------------------
 -- Records of Board_info
 -- ----------------------------
-INSERT INTO `Board_info` VALUES (1, '示例桌游1', '类别1', '2-4', '简介1', '存储位置1', 1);
-INSERT INTO `Board_info` VALUES (2, '示例桌游2', '类别1', '4-6', '简介2', '存储位置2', 1);
-INSERT INTO `Board_info` VALUES (3, '示例桌游3', '类别3', '6', '简介3', '存储位置3', 1);
-INSERT INTO `Board_info` VALUES (4, '示例桌游4', '类别2', '8', '简介4', '存储位置2', 1);
-INSERT INTO `Board_info` VALUES (5, '示例桌游5', '类别4', '4', '简介5', '存储位置2', 1);
-INSERT INTO `Board_info` VALUES (6, '示例桌游6', '类别4', '2-6', '简介6', '存储位置3', 1);
-INSERT INTO `Board_info` VALUES (7, '示例桌游7', '类别2', '4', '简介7', '存储位置3', 1);
-INSERT INTO `Board_info` VALUES (8, '示例桌游8', '类别1', '2', '简介8', '存储位置1', 1);
+INSERT INTO `Board_info` VALUES (1, '示例桌游1', '类别1', '2-4', '简介1：你说的对，但是「桌游1」是由「Null」自主研发的一款全新开放世界冒险游戏。游戏发生在一个被称作「NullPtrException」的幻想世界，在这里，被神选中的人将被授予「Bug」，导引崩溃之力。你将扮演一位名为「Debugger」的神秘角色在自由的旅行中邂逅性格各异、能力独特的同伴们，和他们一起击败强敌，找回失散的亲人——同时，逐步发掘「锟斤拷」的真相。', '存储位置1', 1);
+INSERT INTO `Board_info` VALUES (2, '示例桌游2', '类别1', '4-6', '简介2：这里本来有玩法说明，但是指针不见了。', '存储位置2', 1);
+INSERT INTO `Board_info` VALUES (3, '示例桌游3', '类别3', '6', '简介3：这个桌游的玩法下次再来探索吧。', '存储位置3', 1);
+INSERT INTO `Board_info` VALUES (4, '示例桌游4', '类别2', '8', '简介4：前面忘了，中间忘了，后面忘了。', '存储位置2', 1);
+INSERT INTO `Board_info` VALUES (5, '示例桌游5', '类别4', '4', '简介5：众所周知，NaN不小于，不大于，也不等于任何值。', '存储位置2', 1);
+INSERT INTO `Board_info` VALUES (6, '示例桌游6', '类别4', '2-6', '简介6：Time Limit Exceeded.', '存储位置3', 1);
+INSERT INTO `Board_info` VALUES (7, '示例桌游7', '类别2', '4', '简介7：Tip:要获得一串随机字符串，只需要让新手退出Vim。', '存储位置3', 1);
+INSERT INTO `Board_info` VALUES (8, '示例桌游8', '类别1', '2', '简介8：编不下去了', '存储位置1', 1);
 
 -- ----------------------------
 -- Table structure for lend_list

@@ -75,7 +75,6 @@
             <th>桌游名称</th>
             <th>类别</th>
             <th>游玩人数</th>
-            <th>简介</th>
             <th>状态</th>
             <th>操作</th>
             <th></th>
@@ -87,12 +86,11 @@
             <td th:text="${Board.getName()}"></td>
             <td th:text="${Board.getCategory()}"></td>
             <td th:text="${Board.getPlayerCount()}"></td>
-            <td th:text="${Board.getIntroduction()}"></td>
             <div th:switch="${Board.getState()}">
                 <td th:case="1">可用</td>
                 <td th:case="0">已借出</td>
             </div>
-            <td><a th:href="@{'/user/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">详情</a></td>
+            <td><a th:href="@{'/user/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">更多信息</a></td>
             <div th:switch="${Board.getState()}">
                 <td th:case="1"><a th:href="@{'/user/record/toAddPage/'+${Board.getBoardId()}+'/'+${session.name}}" class="btn btn-outline-info">借用</a></td>
             </div>
