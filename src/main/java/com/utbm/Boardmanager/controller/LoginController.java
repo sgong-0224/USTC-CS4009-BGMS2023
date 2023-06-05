@@ -28,18 +28,12 @@ public class LoginController {
     public String toRegisterPage(){
         return "register";
     }
-    @RequestMapping("/toRegisterPage2")
-    public String toRegisterPage2(){
-        return "registerplayer";
-    }
-    @RequestMapping("/registerUser")
-    public String RegisterUser(User User){
-        userMapper.addUser(User);
-        return "/toRegisterPage2";
-    }
-    @RequestMapping("/register_Player")
-    public String RegisterPlayer(Player Player){
-        playerMapper.addPlayer(Player);
+    @RequestMapping("/register")
+    public String RegisterUser(){
+        User tUser = new User();
+        Player tPlayer = new Player();
+        userMapper.addUser(tUser);
+        playerMapper.addPlayer(tPlayer);
         return "/toLoginPage";
     }
 }

@@ -95,12 +95,12 @@
     <br>
     <div class="input-group">
       <label for="BoardId">桌游编号</label>
-      <input type="text" class="form-control" id="BoardId" name="BoardId">
+      <input type="text" readonly="readonly" class="form-control" id="BoardId" name="BoardId" th:value="${Board.getBoardId()}">
     </div>
     <br>
     <div class="input-group">
       <label for="PlayerId">用户名</label>
-      <input type="text" class="form-control" id="PlayerId" name="PlayerId" >
+      <input type="text" readonly="readonly" class="form-control" id="PlayerId" name="PlayerId" th:value="${Player.getPlayerId()}">
     </div>
     <br>
     <div class="input-group">

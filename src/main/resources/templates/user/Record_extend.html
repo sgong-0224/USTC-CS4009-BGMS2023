@@ -64,9 +64,11 @@
         <tr th:each="record, recordStat: ${Record}">
         <input type="text" hidden name="State" th:value="0">
         <input type="text" hidden name="sernum" th:value="${Record.getSernum()}">
-        <br>
+            <br>
+            <div>请选择新的预计归还时间</div>
+            <br>
         <div class="input-group">
-            <label for="backDate">归还时间</label>
+            <label for="backDate">预计归还时间</label>
             <input type="datetime-local" class="form-control" id="backDate" name="backDate">
         </div>
         <br>

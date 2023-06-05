@@ -86,8 +86,8 @@
             </div>
             <div th:switch="${record.getState()}">
                 <td th:case="0">
-                    <a th:href="@{'/user/record/toExtendPage/' + ${record.getSernum()}}" class="btn btn-outline-success">续借</a>
-                    &nbsp;
+                    <a th:href="@{'/user/record/toExtendPage/' + ${record.getSernum()}}" class="btn btn-outline-info">续借</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a th:href="@{'/user/record/toReturnPage/' + ${record.getSernum()}}" class="btn btn-outline-success">归还</a>
                 </td>
             </div>

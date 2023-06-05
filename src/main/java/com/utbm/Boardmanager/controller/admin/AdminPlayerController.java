@@ -23,11 +23,4 @@ public class AdminPlayerController {
         model.addAttribute("Players", Players);
         return "admin/Players";
     }
-    @RequestMapping("/delete/{PlayerId}")
-    public String delete(@PathVariable("PlayerId") String PlayerId, Model model) {
-        playerMapper.delPlayer(PlayerId);
-        List<Player> Players = playerMapper.getAllPlayer();
-        model.addAttribute("Players", Players);
-        return "admin/Players";
-    }
 }

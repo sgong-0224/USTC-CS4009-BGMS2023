@@ -93,7 +93,7 @@
             </div>
             <td><a th:href="@{'/user/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">详情</a></td>
             <div th:switch="${Board.getState()}">
-                <td th:case="1"><a th:href="@{/user/record/toAddPage}" class="btn btn-outline-success">借用</a></td>
+                <td th:case="1"><a th:href="@{'/user/record/toAddPage/'+${Board.getBoardId()}+'/'+${session.name}}" class="btn btn-outline-info">借用</a></td>
             </div>
         </tr>
         </tbody>

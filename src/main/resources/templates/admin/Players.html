@@ -69,7 +69,6 @@
             <th>用户名</th>
             <th>姓名</th>
             <th>电话</th>
-            <th>操作</th>
             <th></th>
         </tr>
         </thead>
@@ -78,9 +77,6 @@
             <td th:text="${Player.getPlayerId()}"></td>
             <td th:text="${Player.getName()}"></td>
             <td th:text="${Player.getTelcode()}"></td>
-            <td><a th:href="@{'/admin/Player/delete/' + ${Player.getPlayerId()}}" class="btn btn-outline-danger">删除</a></td>
-            <!--<td><a href="#" class="btn btn-outline-danger">挂失</a></td>
-            <td><a href="#" class="btn btn-outline-dark">停借</a></td>-->
         </tr>
         </tbody>
     </table>
