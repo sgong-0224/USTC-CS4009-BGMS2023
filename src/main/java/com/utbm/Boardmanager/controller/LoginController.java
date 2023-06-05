@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.Objects;
 
 @Controller
 public class LoginController {
@@ -20,7 +21,11 @@ public class LoginController {
     @RequestMapping({"/", "/index"})
     public String login(HttpSession session) {
         String username = (String) session.getAttribute("username");
-        if(playerMapper.getPlayerInfo(username)==null && username!="admin"){
+        String name = (String) session.getAttribute("name");
+        if(playerMapper.getPlayerInfo(username)==null
+                && !Objects.equals(username, "admin")
+                && !Objects.equals(name, "admin")
+           ){
             String request="redirect:/toRegisterPage2/"+username;
             return request;
         }else {
