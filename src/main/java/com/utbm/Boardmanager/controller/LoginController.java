@@ -20,7 +20,7 @@ public class LoginController {
     @RequestMapping({"/", "/index"})
     public String login(HttpSession session) {
         String username = (String) session.getAttribute("username");
-        if(playerMapper.getPlayerInfo(username)==null){
+        if(playerMapper.getPlayerInfo(username)==null && username!="admin"){
             String request="redirect:/toRegisterPage2/"+username;
             return request;
         }else {
