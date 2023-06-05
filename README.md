@@ -36,11 +36,13 @@ UI: Bootstrap
 
 #### 附录：测试用户信息
 
-暂未开发注册功能，请使用library.sql自带的用户凭据登录(见下表)：
+可使用library.sql自带的用户凭据登录和测试(见下表)：
 
 | 用户名 | 密码      | 用户类型       |
 | ------ | --------- | -------------- |
 | admin  | useradmin | 管理员"admin"  |
 | user   | userpass  | 普通用户"user" |
-| user2  | userpass  | 普通用户"user" |
+| user2  | userpass2 | 普通用户"user" |
+| user3  | userpass3 | 普通用户"user" |
+| user4  | userpass4 | 普通用户"user" |
 
