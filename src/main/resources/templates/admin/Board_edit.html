@@ -97,9 +97,29 @@
             <input type="text" class="form-control" id="StoreLocation" name="StoreLocation" th:value="${Board.getStoreLocation()}">
         </div>
         <br>
-        <div class="input-group">
-            <label for="State">状态(1为可用，0为已借出)</label>
-            <input type="text" class="form-control" id="State" name="State" th:value="${Board.getState()}">
+        <div class="input-group" margin="left" height="20px" vertical-align="middle">
+            <div width="30px"><label>状态</label></div>
+            <tr width="20px">
+                <div width="20px">
+                    <label for="State0">可用</label>
+                </div>
+            </tr>
+            <tr width="15px">
+                <div width="15px">
+                    <input type="radio" name="State" id="State0" value="1" checked="checked" class="form-control">
+                </div>
+            </tr>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <tr width="30px">
+                <div width="30px">
+                    <label for="State1">已借出</label>
+                </div>
+            </tr>
+            <tr width="15px">
+                <div width="15px">
+                    <input type="radio" name="State" id="State1" value="0" class="form-control">
+                </div>
+            </tr>
         </div>
         <br>
         <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">

@@ -258,10 +258,13 @@ input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
+  width:15px;
+  height:15px;
 }
 
 textarea {
   overflow: auto;
+  height:100px;
   resize: vertical;
 }
 
