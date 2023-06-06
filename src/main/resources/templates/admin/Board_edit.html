@@ -97,30 +97,30 @@
             <input type="text" class="form-control" id="StoreLocation" name="StoreLocation" th:value="${Board.getStoreLocation()}">
         </div>
         <br>
-        <div class="input-group" margin="left" height="20px" vertical-align="middle">
-            <div width="30px"><label>状态</label></div>
+        <span class="input-group" display="table-cell" vertical-align="middle">
+            <div width="50px"><label>状态</label></div>
             <tr width="20px">
-                <div width="20px">
-                    <label for="State0">可用</label>
+                <div>
+                <label for="State0">可用</label>
                 </div>
             </tr>
-            <tr width="15px">
-                <div width="15px">
-                    <input type="radio" name="State" id="State0" value="1" checked="checked" class="form-control">
+            <tr width="20px">
+                <div>
+                <input type="radio" name="State" id="State0" value="1" checked="checked">
                 </div>
             </tr>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <tr width="30px">
-                <div width="30px">
-                    <label for="State1">已借出</label>
+                <div>
+                <label for="State1">已借出</label>
                 </div>
             </tr>
-            <tr width="15px">
-                <div width="15px">
-                    <input type="radio" name="State" id="State1" value="0" class="form-control">
+            <tr width="20px">
+                <div>
+                <input type="radio" name="State" id="State1" value="0">
                 </div>
             </tr>
-        </div>
+        </span>
         <br>
         <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">
         <a th:href="@{/admin/Board/getAll}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>

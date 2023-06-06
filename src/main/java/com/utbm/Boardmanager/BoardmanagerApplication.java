@@ -3,7 +3,7 @@ package com.utbm.Boardmanager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-//项目实现:
+//使用技术:
 //数据库：MySQL
 //后端框架: SpringBoot
 //HTML模板: ThymeLeaf
