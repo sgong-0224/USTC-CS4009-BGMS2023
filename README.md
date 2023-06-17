@@ -21,11 +21,21 @@ UI: Bootstrap
 
 ## 依赖项
 
+运行环境：Java Runtime Environment、MySQL、Tomcat
+
 编译环境：Maven(>=3.8.1)、MySQL、Java Development Kit(<=17，Target=Java1.8)
 
-运行环境：Java Runtime Environment
-
 ## 使用说明
+### 自动配置(Windows)：
+
+1.安装依赖：见上节
+
+2.下载release并解压，执行start_service.bat
+
+3.访问`127.0.0.1:8166`以使用服务。
+
+### 手动配置：
+
 1. 使用Navicat新建连接，新建数据库library，右键数据库-->运行library.sql脚本。
 
 2. 配置src/main/resources/application.yml，修改username/password为数据库连接凭据。
@@ -36,7 +46,7 @@ UI: Bootstrap
 
    终端切换至jar包所在目录，执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）即可运行。
 
-​	5.访问`127.0.0.1:8166`以使用服务。运行前保证8166端口未被占用。
+​	5.访问`127.0.0.1:8166`以使用服务。
 
 ##目录树结构、数据表结构及建议命名规范
 
