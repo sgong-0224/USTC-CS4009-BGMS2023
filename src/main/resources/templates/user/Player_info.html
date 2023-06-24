@@ -75,12 +75,12 @@
         <br>
         <div class="input-group">
             <label for="name">姓名</label>
-            <input type="text" class="form-control" id="name" name="name" th:value="${info.getName()}">
+            <input type="text" class="form-control" id="name" name="name" th:value="${info.getName()}" maxlength="255" required>
         </div>
         <br>
         <div class="input-group">
             <label for="telcode">电话</label>
-            <input type="text" class="form-control" id="telcode" name="telcode" th:value="${info.getTelcode()}">
+            <input type="text" class="form-control" id="telcode" name="telcode" th:value="${info.getTelcode()}" maxlength="11" required>
         </div>
         <br>
         <input type="submit" value="修    改" class="btn btn-outline-primary btn-lg" style="margin-top: 20px">

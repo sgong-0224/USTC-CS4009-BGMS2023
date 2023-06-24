@@ -39,11 +39,11 @@
         <form th:action="@{/login}" method="post">
             <div class="form-group">
                 <label for="username" class="">用户名:</label>
-                <input type="text" class="form-control" id="username" name="username">
+                <input type="text" class="form-control" id="username" name="username" maxlength="255">
             </div>
             <div class="form-group">
                 <label for="password" class="">密码:</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" maxlength="255">
             </div>
             <input type="submit" class="btn btn-primary btn-lg" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" style="margin-top: 20px">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

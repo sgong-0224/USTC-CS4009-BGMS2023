@@ -46,12 +46,12 @@
       <input type="text" hidden name="PlayerId" th:value="${tUser.getUsername()}">
     <div class="input-group">
       <label for="name">姓名</label>
-      <input type="text" class="form-control" id="name" name="name">
+      <input type="text" class="form-control" id="name" name="name" maxlength="255">
     </div>
     <br>
     <div class="input-group">
       <label for="telcode">电话</label>
-      <input type="text" class="form-control" id="telcode" name="telcode">
+      <input type="text" class="form-control" id="telcode" name="telcode" maxlength="11">
     </div>
     <br>
     <input type="submit" value="提&nbsp;&nbsp;&nbsp;&nbsp;交" class="btn btn-outline-primary btn-lg">

@@ -74,27 +74,27 @@
         <br>
         <div class="input-group">
             <label for="name">桌游名称</label>
-            <input type="text" class="form-control" id="name" name="name" th:value="${Board.getName()}">
+            <input type="text" class="form-control" id="name" name="name" th:value="${Board.getName()}" maxlength="50" required>
         </div>
         <br>
         <div class="input-group">
             <label for="Category">类别</label>
-            <input type="text" class="form-control" id="Category" name="Category" th:value="${Board.getCategory()}">
+            <input type="text" class="form-control" id="Category" name="Category" th:value="${Board.getCategory()}" maxlength="30" required>
         </div>
         <br>
         <div class="input-group">
             <label for="PlayerCount">游玩人数</label>
-            <input type="text" class="form-control" id="PlayerCount" name="PlayerCount" th:value="${Board.getPlayerCount()}">
+            <input type="text" class="form-control" id="PlayerCount" name="PlayerCount" th:value="${Board.getPlayerCount()}" maxlength="13" required>
         </div>
         <br>
         <div class="input-group">
             <label for="Introduction">简介</label>
-            <textarea class="form-control" id="Introduction" name="Introduction" th:text="${Board.getIntroduction()}"></textarea>
+            <textarea class="form-control" id="Introduction" name="Introduction" th:text="${Board.getIntroduction()}" maxlength="255"></textarea>
         </div>
         <br>
         <div class="input-group">
             <label for="StoreLocation">存储位置</label>
-            <input type="text" class="form-control" id="StoreLocation" name="StoreLocation" th:value="${Board.getStoreLocation()}">
+            <input type="text" class="form-control" id="StoreLocation" name="StoreLocation" th:value="${Board.getStoreLocation()}" maxlength="50" required>
         </div>
         <br>
         <span class="input-group" display="table-cell" vertical-align="middle">
