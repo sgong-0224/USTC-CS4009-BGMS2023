@@ -2,7 +2,7 @@
 
 # 桌游管理系统(Spring,2023 USTCCS-4009)
 
-
+README Updated:20230701
 
 
 ## 主要功能
@@ -21,12 +21,16 @@ UI: Bootstrap
 
 ## 依赖项
 
-运行环境：Java Runtime Environment、MySQL、Tomcat
+运行环境(服务端)：Java Runtime Environment(=Java 8)   [Download Java for Windows](https://www.java.com/en/download/)
 
-编译环境：Maven(>=3.8.1)、MySQL、Java Development Kit(<=17，Target=Java1.8)
+​                                MySQL   [MySQL :: Download MySQL Installer](https://dev.mysql.com/downloads/installer/)
+
+​                                Tomcat  [Apache Tomcat® - Apache Tomcat 9 Software Downloads](https://tomcat.apache.org/download-90.cgi)
+
+编译依赖项：Maven(建议版本>=3.8.1)、Java Development Kit(建议版本<=17，Target=Java1.8)
 
 ## 使用说明
-### 自动配置(Windows)：
+### 直接运行(Windows)：
 
 1.安装依赖：见上节
 
@@ -34,7 +38,7 @@ UI: Bootstrap
 
 3.访问`127.0.0.1:8166`以使用服务。
 
-### 手动配置：
+### 编译运行：
 
 1. 使用Navicat新建连接，新建数据库library，右键数据库-->运行library.sql脚本。
 
@@ -160,7 +164,7 @@ UI: Bootstrap
 
 ·函数名称建议使用首字母小写的驼峰命名法(camelCase)。
 
-·所有依赖关系均已检查过，不需要编辑SQL文件的数据项名称。如必须编辑，'id'采用小写。
+·所有依赖关系均已检查过，不需要编辑SQL文件的数据项名称。
 
 
 ## 附录
