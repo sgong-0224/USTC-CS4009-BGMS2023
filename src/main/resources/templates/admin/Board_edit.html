@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         nav {
-            font-size: 1.5rem;
-            background-color: #21D4FD;
-            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            font-size: 1.25rem;
+            background-color: #0F4C81;
+            background-image: linear-gradient(0deg, #0F4C81 100%, #0F4C81 100%);
         }
         h1 {
             font-size: 2rem;
@@ -32,6 +29,11 @@
         }
         .input-group {
             margin-bottom: 10px;
+        }
+        body {
+            background-color: DEE0E3;
+            background-size: cover;
+            background-image: linear-gradient(0deg, #DEE0E3 100%, #DEE0E3 100%);
         }
     </style>
 </head>
@@ -122,8 +124,8 @@
             </tr>
         </span>
         <br>
-        <input type="submit" value="提    交" class="btn btn-outline-primary btn-lg">
-        <a th:href="@{/admin/Board/getAll}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
+        <input type="submit" value="提    交" class="btn btn-primary btn-lg">
+        <a th:href="@{/admin/Board/getAll}" class="btn btn-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
     </form>
 
 </div>

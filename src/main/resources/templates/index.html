@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         nav {
-            font-size: 1.5rem;
-            background-color: #21D4FD;
-            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            font-size: 1.25rem;
+            background-color: #0F4C81;
+            background-image: linear-gradient(0deg, #0F4C81 100%, #0F4C81 100%);
         }
         h1 {
             font-size: 2rem;
@@ -28,30 +25,7 @@
         }
     </style>
 </head>
-<script>
-	    function datenow(){
-		  var d = new Date();
-		  var a = d.getFullYear() + " ";
-		  if (d.getMonth() + 1 >= 10 ){
-			  var c = (d.getMonth() + 1);
-		  }
-		  else{
-			  var c = "0" + (d.getMonth() + 1) + ' ';
-		  }
-		  if (d.getDate() >= 10 ){
-		  	  var n = d.getDate()+ ' ';
-		  }
-		  else{
-		  	  var n = "0" + d.getDate()+ ' ';
-		  }
-		  var aday = new Array("日", "一", "二", "三", "四", "五", "六");
-          var week = new Date().getDay();
-          var daystr = "星期"+ aday[week];
-		  document.getElementById("DateNow").innerHTML = a +"年 "+ c +"月 "+ n +"日 "+daystr;
-		  setInterval(function() {datenow()},1000);
-	    }
-</script>
-<body onload="datenow()">
+<body>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
         <ul class="navbar-nav" sec:authorize="hasRole('ADMIN')">
             <li>
@@ -99,15 +73,14 @@
         </div>
     </nav>
 
-    <div class="card bg-light" style="margin: 150px 100px; width: 400px">
+    <div class="card bg-light" style="margin: 135px 100px; width: 300px">
         <div class="card-header">
-            <h1>欢迎使用桌游管理系统</h1>
+            <h5>欢迎使用桌游管理系统</h5>
         </div>
         <div class="card-body">
-            <p>
+            <p style="margin: 0px 10px;">
                 <div>
-                <label for="DateNow"><a th:text="${session.name}"></a>, 您好！<br><br>
-                今天是</label><label id="DateNow" name="DateNow"></label>
+                <a th:text="${session.name}"></a>, 您好！<br>
                 </div>
                 <br>
                 <a sec:authorize="hasRole('USER')">
