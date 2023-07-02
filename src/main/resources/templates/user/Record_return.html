@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         nav {
-            font-size: 1.5rem;
-            background-color: #21D4FD;
-            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            font-size: 1.25rem;
+            background-color: #0F4C81;
+            background-image: linear-gradient(0deg, #0F4C81 100%, #0F4C81 100%);
         }
         h1 {
             font-size: 2rem;
@@ -27,40 +24,14 @@
             width: 300px;
             float: right;
         }
+        body {
+            background-color: DEE0E3;
+            background-size: cover;
+            background-image: linear-gradient(0deg, #DEE0E3 100%, #DEE0E3 100%);
+        }
     </style>
 </head>
-<script>
-	    function timenow(){
-		  var d = new Date();
-		  var a = d.getFullYear() + "-";
-		  if (d.getMonth() + 1 >= 10 ){
-			  var c = (d.getMonth() + 1) + "-";
-		  }
-		  else{
-			  var c = "0" + (d.getMonth() + 1) + '-';
-		  }
-		  if (d.getDate() >= 10 ){
-		  	  var n = d.getDate();
-		  }
-		  else{
-		  	  var n = "0" + d.getDate();
-		  }
-		  if (d.getHours() >= 10 ){
-		  	  var h = "T" + d.getHours()+':';
-		  }
-		  else{
-		  	  var h = "T"+"0" + d.getHours()+':';
-		  }
-          if (d.getMinutes() >= 10 ){
-		  	  var m = d.getMinutes();
-		  }
-		  else{
-		  	  var m = "0" + d.getMinutes();
-		  }
-		  document.getElementById("backDate").value = a + c + n + h + m;
-	    }
-</script>
-<body onload="timenow()">
+<body>
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <ul class="navbar-nav">
         <li>
@@ -101,11 +72,11 @@
         <br>
         <div class="input-group">
             <label for="backDate">归还时间</label>
-            <input type="text" readonly="readonly" class="form-control" id="backDate" name="backDate">
+            <input type="text" readonly="readonly" class="form-control" id="backDate" name="backDate" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd HH:mm')}">
         </div>
         <br>
-        <input type="submit" value="确认归还" class="btn btn-outline-primary btn-lg">
-        <a th:href="@{/user/record/getOwnRecord}" class="btn btn-outline-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
+        <input type="submit" value="确认归还" class="btn btn-primary btn-lg">
+        <a th:href="@{/user/record/getOwnRecord}" class="btn btn-secondary btn-lg" style="margin-left: 40px">取&nbsp;&nbsp;&nbsp;&nbsp;消</a>
         <br>
         </tr>
     </form>

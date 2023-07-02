@@ -61,15 +61,15 @@ CREATE TABLE `lend_list`  (
 -- ----------------------------
 -- Records of lend_list
 -- ----------------------------
-INSERT INTO `lend_list` VALUES (1, 1, 'user', '2023-01-01T07:50','2023-01-02T13:30',1);
-INSERT INTO `lend_list` VALUES (2, 3, 'user2', '2023-01-01T07:53','2023-01-03T13:30',1);
-INSERT INTO `lend_list` VALUES (3, 2, 'user4', '2023-01-02T07:56','2023-01-02T12:28',1);
-INSERT INTO `lend_list` VALUES (4, 4, 'user3', '2023-01-02T08:50','2023-01-02T13:30',1);
-INSERT INTO `lend_list` VALUES (5, 2, 'user', '2023-01-02T14:50','2023-01-15T10:30',1);
-INSERT INTO `lend_list` VALUES (6, 4, 'user4', '2023-01-03T07:50','2023-01-05T13:30',1);
-INSERT INTO `lend_list` VALUES (7, 6, 'user3', '2023-01-03T09:50','2023-01-04T12:10',1);
-INSERT INTO `lend_list` VALUES (8, 6, 'user2', '2023-01-04T13:50','2023-01-12T13:30',1);
-INSERT INTO `lend_list` VALUES (9, 2, 'user', '2023-01-16T17:50','2023-01-20T21:30',1);
+INSERT INTO `lend_list` VALUES (1, 1, 'user', '2023-01-01 07:50','2023-01-02 13:30',1);
+INSERT INTO `lend_list` VALUES (2, 3, 'user2', '2023-01-01 07:53','2023-01-03 13:30',1);
+INSERT INTO `lend_list` VALUES (3, 2, 'user4', '2023-01-02 07:56','2023-01-02 12:28',1);
+INSERT INTO `lend_list` VALUES (4, 4, 'user3', '2023-01-02 08:50','2023-01-02 13:30',1);
+INSERT INTO `lend_list` VALUES (5, 2, 'user', '2023-01-02 14:50','2023-01-15 10:30',1);
+INSERT INTO `lend_list` VALUES (6, 4, 'user4', '2023-01-03 07:50','2023-01-05 13:30',1);
+INSERT INTO `lend_list` VALUES (7, 6, 'user3', '2023-01-03 09:50','2023-01-04 12:10',1);
+INSERT INTO `lend_list` VALUES (8, 6, 'user2', '2023-01-04 13:50','2023-01-12 13:30',1);
+INSERT INTO `lend_list` VALUES (9, 2, 'user', '2023-01-16 17:50','2023-01-20 21:30',1);
 
 -- ----------------------------
 -- Table structure for Player_info

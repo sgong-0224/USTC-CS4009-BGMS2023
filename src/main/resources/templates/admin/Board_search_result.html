@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         nav {
-            font-size: 1.5rem;
-            background-color: #21D4FD;
-            background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            font-size: 1.25rem;
+            background-color: #0F4C81;
+            background-image: linear-gradient(0deg, #0F4C81 100%, #0F4C81 100%);
         }
         h1 {
             font-size: 2rem;
@@ -26,6 +23,11 @@
         #searchBox {
             width: 300px;
             float: right;
+        }
+        body {
+            background-color: DEE0E3;
+            background-size: cover;
+            background-image: linear-gradient(0deg, #DEE0E3 100%, #DEE0E3 100%);
         }
     </style>
 </head>
@@ -63,7 +65,7 @@
 </nav>
 
 <div class="container" style="margin-top: 40px">
-    <a th:href="@{/admin/Board/toAddPage}" class="btn btn-outline-primary btn-lg">添&nbsp;&nbsp;&nbsp;&nbsp;加</a>
+    <a th:href="@{/admin/Board/toAddPage}" class="btn btn-primary btn-lg">添&nbsp;&nbsp;&nbsp;&nbsp;加</a>
     <a th:href="@{/admin/Board/getAll}" class="btn btn-link text-muted">全部桌游</a>
     <form th:action="@{/admin/Board/search}" id="searchBox">
         <div class="input-group">
@@ -97,9 +99,9 @@
                 <td th:case="1">可用</td>
                 <td th:case="0">已借出</td>
             </div>
-            <td><a th:href="@{'/admin/Board/info/' + ${Board.getBoardId()}}" class="btn btn-outline-success">更多信息</a></td>
-            <td><a th:href="@{'/admin/Board/toEditPage/' + ${Board.getBoardId()}}" class="btn btn-outline-info">编辑</a></td>
-            <td><a th:href="@{'/admin/Board/delete/' + ${Board.getBoardId()}}" class="btn btn-outline-danger">删除</a></td>
+            <td><a th:href="@{'/admin/Board/info/' + ${Board.getBoardId()}}" class="btn btn-success">更多信息</a></td>
+            <td><a th:href="@{'/admin/Board/toEditPage/' + ${Board.getBoardId()}}" class="btn btn-info">编辑</a></td>
+            <td><a th:href="@{'/admin/Board/delete/' + ${Board.getBoardId()}}" class="btn btn-danger">删除</a></td>
         </tr>
         </tbody>
     </table>
