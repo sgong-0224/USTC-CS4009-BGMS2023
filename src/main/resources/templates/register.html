@@ -45,7 +45,7 @@
         <br>
         <div class="input-group">
             <label for="username">用户名</label>
-            <input type="text" class="form-control" id="username" name="username" maxlength="255" required>
+            <input type="text" onkeyup="this.value=this.value.replace(/[^\w\.\/]/ig,'')" class="form-control" id="username" name="username" maxlength="255" required>
         </div>
         <br>
         <div class="input-group">
