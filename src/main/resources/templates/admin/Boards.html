@@ -68,7 +68,7 @@
     <a th:href="@{/admin/Board/toAddPage}" class="btn btn-primary btn-lg">添&nbsp;&nbsp;&nbsp;&nbsp;加</a>
     <form th:action="@{/admin/Board/search}" id="searchBox">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="输入关键词..." name="keyword">
+            <input type="text" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" class="form-control" placeholder="输入关键词(建议逐字输入)..." name="keyword">
             <input type="submit" class="input-group-append btn btn-success" value="搜  索">
         </div>
     </form>

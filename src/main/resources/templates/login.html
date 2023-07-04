@@ -34,7 +34,7 @@
         <form th:action="@{/login}" method="post">
             <div class="form-group" style="margin:5px">
                 <label for="username" class="" style="margin:0px"></label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="用户名" maxlength="255" style="width:240px;margin:0px 30px">
+                <input type="text" onkeyup="this.value=this.value.replace(/[^\w\.\/]/ig,'')" class="form-control" id="username" name="username" placeholder="用户名" maxlength="255" style="width:240px;margin:0px 30px">
             </div>
             <div class="form-group" style="margin:5px">
                 <label for="password" class="" style="margin:0px"></label>

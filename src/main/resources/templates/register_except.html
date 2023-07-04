@@ -45,7 +45,7 @@
         <br>
         <div class="input-group">
             <label for="username">用户名</label>
-            <input type="text" class="form-control" id="username" name="username" maxlength="255" required>
+            <input type="text" onkeyup="this.value=this.value.replace(/[^\w\.\/]/ig,'')" class="form-control" id="username" name="username" maxlength="255" required>
         </div>
         <div style="color:#dc3545">注册失败！您尝试使用的用户名已存在，请更换用户名后重试。</div>
         <br>
