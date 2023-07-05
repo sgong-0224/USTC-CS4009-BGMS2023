@@ -86,18 +86,16 @@
 </nav>
 
 <div class="container">
-    <div></div>
-    <form th:action="@{/changePasswordAuth}" method="post" style="margin-top: 40px" class="form">
+    <form th:action="@{/changePassword}" method="post"  class="form">
+        <br>
+        <div>修改密码后请重新登录</div>
+        <br>
         <div class="input-group">
-            <label for="username">用户名</label>
-            <input type="text" class="form-control" id="username" name="username" th:value="${session.username}" readonly>
-        </div>
-        <div class="input-group">
-            <label for="password">请输入旧密码</label>
+            <label for="password">请输入新密码</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
-        <input type="submit" value="下&nbsp;&nbsp;一&nbsp;&nbsp;步" class="btn btn-primary btn-lg" style="margin-top: 20px">
-        <a th:href="@{/}" class="btn btn-secondary btn-lg" style="margin-left: 40px; margin-top: 20px">返&nbsp;&nbsp;&nbsp;&nbsp;回</a>
+        <input type="submit" value="修    改" class="btn btn-primary btn-lg" style="margin-top: 20px">
+        <a th:href="@{/toLoginPage}" class="btn btn-secondary btn-lg" style="margin-left: 40px; margin-top: 20px">返&nbsp;&nbsp;&nbsp;&nbsp;回</a>
     </form>
 </div>
 
