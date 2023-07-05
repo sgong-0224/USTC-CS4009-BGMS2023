@@ -2,7 +2,7 @@
 
 # 桌游管理系统(Spring,2023 USTCCS-4009)
 
-README Updated:20230701
+README Updated:20230705
 
 
 ## 主要功能
@@ -30,13 +30,16 @@ UI: Bootstrap
 编译依赖项：Maven(建议版本>=3.8.1)、Java Development Kit(建议版本<=17，Target=Java1.8)
 
 ## 使用说明
+
+*SSL证书为自签发证书，如浏览器弹出安全警告直接无视即可。
+
 ### 直接运行(Windows)：
 
 1.安装依赖：见上节
 
 2.下载release并解压，执行start_service.bat
 
-3.访问`127.0.0.1:8166`以使用服务。
+3.访问`127.0.0.1:8443`以使用服务。
 
 ### 编译运行：
 
@@ -50,7 +53,7 @@ UI: Bootstrap
 
    终端切换至jar包所在目录，执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）即可运行。
 
-​	5.访问`127.0.0.1:8166`以使用服务。
+​	5.访问`127.0.0.1:8443`以使用服务。
 
 ##目录树结构、数据表结构及建议命名规范
 
