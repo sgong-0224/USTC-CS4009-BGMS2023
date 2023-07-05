@@ -59,21 +59,31 @@ UI: Bootstrap
 
 ###目录树结构：
 
-未展开的目录无需修改，也不应在开发过程中随意更改，除非你很清楚你在做什么。
+编译前建议对照以下列表，将无关的文件和目录删除，以免发生问题。无需理会.gitignore和.git。
 
-📁board-manage-master
+📁USTC-CS4009-BGMS2023-master
 ├─ 📄.gitignore
 ├─ 📄library.sql
 ├─ 📄pom.xml
 ├─ 📄README.md
 ├─ 📁.mvn
+│  └─ 📁wrapper
+│     ├─ 📄maven-wrapper.jar
+│     ├─ 📄maven-wrapper.properties
+│     └─ 📄MavenWrapperDownloader.java
 ├─ 📁.git
 └─ 📁src
    ├─ 📁test
+   │  └─ 📁java
+   │     └─ 📁com
+   │        └─ 📁utbm
+   │           └─ 📁Boardmanager
+   │              └─ 📄BoardmanagerApplicationTests.java
    └─ 📁main
       ├─ 📁resources
       │  ├─ 📄application.properties
       │  ├─ 📄application.yml
+      │  ├─ 📄SSLkey.p12
       │  ├─ 📁mapper
       │  │  ├─ 📄BoardMapper.xml
       │  │  ├─ 📄NotificationMapper.xml
@@ -83,7 +93,9 @@ UI: Bootstrap
       │  ├─ 📁templates
       │  │  ├─ 📄index.html
       │  │  ├─ 📄login.html
+      │  │  ├─ 📄newpasswd.html
       │  │  ├─ 📄password.html
+      │  │  ├─ 📄passworderr.html
       │  │  ├─ 📄register.html
       │  │  ├─ 📄register2.html
       │  │  ├─ 📄register_except.html
@@ -107,6 +119,33 @@ UI: Bootstrap
       │  │     ├─ 📄Record_extend.html
       │  │     └─ 📄Record_return.html
       │  └─ 📁static
+      │     ├─ 📁img
+      │     │  ├─ 📄1.jpg
+      │     │  └─ 📄2.jpg
+      │     └─ 📁bootstrap
+      │        ├─ 📁css
+      │        │  ├─ 📄bootstrap-grid.css
+      │        │  ├─ 📄bootstrap-grid.css.map
+      │        │  ├─ 📄bootstrap-grid.min.css
+      │        │  ├─ 📄bootstrap-grid.min.css.map
+      │        │  ├─ 📄bootstrap-reboot.css
+      │        │  ├─ 📄bootstrap-reboot.css.map
+      │        │  ├─ 📄bootstrap-reboot.min.css
+      │        │  ├─ 📄bootstrap-reboot.min.css.map
+      │        │  ├─ 📄bootstrap.css
+      │        │  ├─ 📄bootstrap.css.map
+      │        │  ├─ 📄bootstrap.min.css
+      │        │  └─ 📄bootstrap.min.css.map
+      │        └─ 📁js
+      │           ├─ 📄bootstrap.bundle.js
+      │           ├─ 📄bootstrap.bundle.js.map
+      │           ├─ 📄bootstrap.bundle.min.js
+      │           ├─ 📄bootstrap.bundle.min.js.map
+      │           ├─ 📄bootstrap.js
+      │           ├─ 📄bootstrap.js.map
+      │           ├─ 📄bootstrap.min.js
+      │           ├─ 📄bootstrap.min.js.map
+      │           └─ 📄jquery.js
       └─ 📁java
          └─ 📁com
             └─ 📁utbm
