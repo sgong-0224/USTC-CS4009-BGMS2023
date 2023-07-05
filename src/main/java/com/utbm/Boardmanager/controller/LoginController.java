@@ -3,17 +3,19 @@ package com.utbm.Boardmanager.controller;
 import com.utbm.Boardmanager.pojo.Player;
 import com.utbm.Boardmanager.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.util.DigestUtils;
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
 
 @Controller
 public class LoginController {
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Autowired
     private com.utbm.Boardmanager.mapper.PlayerMapper playerMapper;
     @Autowired
@@ -50,6 +52,7 @@ public class LoginController {
     public String RegisterUser(User User, Model model){
         if(userMapper.getUserByUsername(User.getUsername())==null){
             userMapper.addUser(User);
+            userMapper.changePassword(User.getUsername(),"{bcrypt}"+passwordEncoder.encode(User.getPassword()));
             User tUser = userMapper.getUserByUsername(User.getUsername());
             model.addAttribute("tUser",tUser);
             String request="redirect:/toRegisterPage2/"+tUser.getUsername();

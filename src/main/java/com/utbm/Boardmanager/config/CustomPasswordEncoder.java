@@ -1,9 +1,9 @@
 package com.utbm.Boardmanager.config;
 
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class CustomPasswordEncoder implements PasswordEncoder {
-
     @Override
     public String encode(CharSequence charSequence) {
         return charSequence.toString();

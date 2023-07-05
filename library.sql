@@ -103,11 +103,11 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('user', 'userpass', 'user');
-INSERT INTO `user` VALUES ('user2', 'userpass2', 'user');
-INSERT INTO `user` VALUES ('user3', 'userpass3', 'user');
-INSERT INTO `user` VALUES ('user4', 'userpass4', 'user');
-INSERT INTO `user` VALUES ('admin', 'useradmin', 'admin');
+INSERT INTO `user` VALUES ('user', '{bcrypt}$2a$08$KphcodzHiApjYSc3liaBcOUFLdcW.BPFOKeog7s/4OzXhGSPAoq7S', 'user');
+INSERT INTO `user` VALUES ('user2', '{bcrypt}$2a$08$ccs922899elj0buc8qMv6u1zEeT.7Q/9SPEsgSv8wYNk1vocrcLxu', 'user');
+INSERT INTO `user` VALUES ('user3', '{bcrypt}$2a$08$DZ4GPrti8oQ3L/uzaEF/sevenhwG4eD59d1FHtsR5Tr7j0qkIf5R2', 'user');
+INSERT INTO `user` VALUES ('user4', '{bcrypt}$2a$08$06Kh9HIAu2MbbJZN8GQoleE8C1.EwLhEur1csrFdd0aA7H1ymay9O', 'user');
+INSERT INTO `user` VALUES ('admin', '{bcrypt}$2a$08$tYtH6LBr1gdz4XFuolWACeCTBOe6lL7I1OHpHNz./a4uUwH0pIZ.2', 'admin');
 
 -- ----------------------------
 -- Table structure for Notification
