@@ -39,7 +39,7 @@ UI: Bootstrap
 
 2.下载release并解压，执行start_service.bat
 
-3.访问`127.0.0.1:8443`以使用服务。
+3.访问`https://localhost:8443`以使用服务。
 
 ### 编译运行：
 
@@ -53,7 +53,7 @@ UI: Bootstrap
 
    终端切换至jar包所在目录，执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）即可运行。
 
-​	5.访问`127.0.0.1:8443`以使用服务。
+​	5.访问`https://localhost:8443`以使用服务。
 
 ##目录树结构、数据表结构及建议命名规范
 
