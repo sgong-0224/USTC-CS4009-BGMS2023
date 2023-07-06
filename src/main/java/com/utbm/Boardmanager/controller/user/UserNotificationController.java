@@ -21,9 +21,6 @@ public class UserNotificationController {
         String username = (String) session.getAttribute("username");
         List<Notification> notifications = notificationMapper.getOwnNotification(username);
         model.addAttribute("notifications", notifications);
-        //debug:
-        //System.out.println(notifications); //返回数据
-        //debug end
         return "user/ownNotification";
     }
 }
