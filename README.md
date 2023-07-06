@@ -2,7 +2,7 @@
 
 # 桌游管理系统(Spring,2023 USTCCS-4009)
 
-README Updated:20230705
+README Updated:20230706
 
 
 ## 主要功能
@@ -27,33 +27,41 @@ UI: Bootstrap
 
 ​                                Tomcat  [Apache Tomcat® - Apache Tomcat 9 Software Downloads](https://tomcat.apache.org/download-90.cgi)
 
-编译依赖项：Maven(建议版本>=3.8.1)、Java Development Kit(建议版本<=17，Target=Java1.8)
+编译环境需要更多依赖：Maven [Maven – Download Apache Maven](https://maven.apache.org/download.cgi)
+
+​                                           Java Development Kit  [Java Downloads | Oracle 中国](https://www.oracle.com/cn/java/technologies/downloads/#java17)
 
 ## 使用说明
 
 *SSL证书为自签发证书，如浏览器弹出安全警告直接无视即可。
 
-### 直接运行(Windows)：
+*建议使用基于新版Chromium内核的浏览器访问。
+
+### 运行方法1(Windows)：
 
 1.安装依赖：见上节
 
-2.下载release并解压，执行start_service.bat
+2.下载release并解压，如未建立数据库连接，执行init.bat；
 
 3.访问`https://localhost:8443`以使用服务。
 
-### 编译运行：
+### 运行方法2：
 
-1. 使用Navicat新建连接，新建数据库library，右键数据库-->运行library.sql脚本。
+1. 使用Navicat新建连接library，新建数据库library，右键数据库-->运行library.sql脚本
 
-2. 配置src/main/resources/application.yml，修改username/password为数据库连接凭据。
+   或使用MySQL进行类似操作；
 
-3. 调试：IDE中找到BoardmanagerApplication类，运行main方法。
+2. 按需编辑/src/main/resources/application.yml
 
-3. 编译(以IntelliJ IDEA为例)：导入Maven项目后选择Maven-Boardmanager-Lifecycle-package，双击编译。
+   ​               /src/main/resources/application.properties;
 
-   终端切换至jar包所在目录，执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）即可运行。
+3. 调试：IDE中找到BoardmanagerApplication类，运行main方法;
 
-​	5.访问`https://localhost:8443`以使用服务。
+3. 编译：使用Maven进行打包；
+
+5. 在jar包所在目录执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）即可运行；
+
+6. 访问`https://localhost:8443`(地址根据实际调整)以使用服务。
 
 ##目录树结构、数据表结构及建议命名规范
 
@@ -206,7 +214,7 @@ UI: Bootstrap
 
 ·函数名称建议使用首字母小写的驼峰命名法(camelCase)。
 
-·所有依赖关系均已检查过，不需要编辑SQL文件的数据项名称。
+·所有依赖关系均已检查过，不需要编辑SQL文件已有的数据项名称。
 
 
 ## 附录

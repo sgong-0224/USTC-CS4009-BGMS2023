@@ -31,4 +31,8 @@
         set back_date=#{backDate},State=#{State}
         where sernum = #{sernum}
     </update>
+
+    <update id="updateBackTime">
+        update lend_list set back_date = #{backtime} where sernum = #{sernum}
+    </update>
 </mapper>

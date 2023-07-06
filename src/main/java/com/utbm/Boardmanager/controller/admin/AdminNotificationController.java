@@ -23,9 +23,6 @@ public class AdminNotificationController {
     public String getAllNotification(Model model) {
         List<Notification> notifications = notificationMapper.getAllNotification();
         model.addAttribute("notifications", notifications);
-        //debug:
-        // System.out.println(notifications); //返回数据
-        //debug end
         return "admin/notifications";
     }
     @RequestMapping("send/{sernum}")
