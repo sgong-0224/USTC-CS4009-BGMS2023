@@ -17,4 +17,5 @@ public interface RecordMapper {
     Record getRecordbySernum(long sernum);
     void ReturnRecord(Record Record);
     void updateRecord(Record Record);
+    void updateBackTime(long sernum,String backtime);
 }

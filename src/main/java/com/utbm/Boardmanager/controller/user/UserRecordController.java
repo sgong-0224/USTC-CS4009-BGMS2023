@@ -44,16 +44,14 @@ public class UserRecordController {
     @RequestMapping("/add")
     public String add(Record Record, HttpSession session, Model model) {
         String username = (String) session.getAttribute("username");
-        long sernum=recordMapper.addRecord(Record);
-        long serial1=Record.getSernum();
-        Record tempRecord=recordMapper.getRecordbySernum(serial1);
+        recordMapper.addRecord(Record);
+        long sernum=Record.getSernum();
+        Record tempRecord=recordMapper.getRecordbySernum(sernum);
+        String rawtime = tempRecord.getBackDate();
+        String formattime = rawtime.replace("T"," ");
+        recordMapper.updateBackTime(sernum,formattime);
         String bid=String.valueOf(tempRecord.getBoardId());
         boardMapper.SetBorrowed(boardMapper.getBoardById(bid));
-        //debug:
-        //System.out.println(""+serial1);
-        //System.out.println(""+tempRecord.getBoardId());
-        //System.out.println(""+bid);
-        //debug end
         List<Record> records = recordMapper.getOwnRecord(username);
         model.addAttribute("records", records);
         return "user/ownRecord";
@@ -62,11 +60,6 @@ public class UserRecordController {
     @RequestMapping("/toReturnPage/{sernum}")
     public String toReturnPage(Model model, @PathVariable("sernum") long sernum) {
         Record Record = recordMapper.getRecordbySernum(sernum);
-        //debug
-        //System.out.println(""+Record.getBoardId());
-        //System.out.println(""+Record.getSernum());
-        //System.out.println(""+Record.getPlayerId());
-        //debug end
         model.addAttribute("Record", Record);
         return "user/Record_return";
     }
@@ -75,9 +68,6 @@ public class UserRecordController {
         String bid=String.valueOf(Record.getBoardId());
         recordMapper.updateRecord(Record);
         Board rBoard=boardMapper.getBoardById(bid);
-        //debug
-        //System.out.println(""+rBoard.getState());
-        //debug end
         boardMapper.SetReturned(rBoard);
         String username = (String) session.getAttribute("username");
         List<Record> records = recordMapper.getOwnRecord(username);
@@ -94,6 +84,10 @@ public class UserRecordController {
     @RequestMapping("/extend")
     public String ExtendRecord(Record Record,HttpSession session,Model model) {
         recordMapper.updateRecord(Record);
+        long sernum=Record.getSernum();
+        String rawtime = Record.getBackDate();
+        String formattime = rawtime.replace("T"," ");
+        recordMapper.updateBackTime(sernum,formattime);
         String username = (String) session.getAttribute("username");
         List<Record> records = recordMapper.getOwnRecord(username);
         model.addAttribute("records", records);
