@@ -43,7 +43,9 @@ UI: Bootstrap
 
 2.下载release并解压，如未建立数据库连接，执行init.bat；
 
-3.访问`https://localhost:8443`以使用服务。
+3.运行服务：在jar包所在目录执行`java -jar PACKAGENAME`（将`PACKAGENAME`替换成文件名）；
+
+4.访问`https://localhost:8443`(地址根据实际调整)以使用服务。
 
 ### 运行方法2：
 
